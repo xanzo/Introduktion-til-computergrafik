@@ -34,6 +34,47 @@ using std::ifstream;
 * http://www.glfw.org/docs/latest/group__keys.html
 */
 
+void drawline(int x1, int y1, int x2, int y2)
+{
+	int dx = x2 - x1;
+	int abs_2dx = std::abs(dx) << 1; // 2 * |dx|
+	int x_step = (dx < 0) ? -1 : 1; // sign of dx
+	int dy = y2 - y1;
+	int abs_2dy = std::abs(dy) << 1; // 2 * |dy|
+	int y_step = (dy < 0) ? -1 : 1; // sign og dy
+	bool x_dominant = (abs_2dx > abs_2dy);
+	int x = x1; // The running x is initialized to x1
+	int y = y1; // The running y is initialized to y1
+	if (x_dominant) {
+		bool left_right = (x_step > 0);
+		int d = abs_2dy - (abs_2dx >> 1); // 2 * |dy| - |dx|
+		for (;;) {
+			DotMaker::instance()->drawDot(x, y);
+			if (x == x2) return;
+			if ((d > 0) || ((d == 0) && left_right)) {
+				y += y_step;
+				d -= abs_2dx;
+			}
+			x += x_step;
+			d += abs_2dy;
+		}
+	}
+	else {
+		bool left_right = (y_step > 0);
+		int d = abs_2dy - (abs_2dx >> 1); // 2 * |dy| - |dx|
+		for (;;) {
+			DotMaker::instance()->drawDot(x, y);
+			if (y == y2) return;
+			if ((d > 0) || ((d == 0) && left_right)) {
+				x += x_step;
+				d -= abs_2dy;
+			}
+			y += y_step;
+			d += abs_2dx;
+		}
+	}
+}
+
 class line_rasterizer {
 public:
 	line_rasterizer();
@@ -81,7 +122,8 @@ void line_rasterizer::init(int x1, int y1, int x2, int y2)
 	this->abs_2dx = std::abs(this->dx) << 1; // 2 * |dx|
 	this->abs_2dy = std::abs(this->dy) << 1; // 2 * |dy|
 	this->x_step = (this->dx < 0) ? -1 : 1;
-	this->y_step = (this->dy < 0) ? -1 : 1;
+	this->y_step = (this->dy < 0) ? -1 : 1;
+
 	if (this->abs_2dx > this->abs_2dy) {
 		// The line is x-dominant
 		this->left_right = (this->x_step > 0);
@@ -98,16 +140,21 @@ void line_rasterizer::init(int x1, int y1, int x2, int y2)
 		this->innerloop =
 			&line_rasterizer::y_dominant_innerloop;
 	}
-}bool line_rasterizer::more_fragments() const
+}
+
+bool line_rasterizer::more_fragments() const
 {
 	return this->valid;
-}void line_rasterizer::next_fragment()
+}
+
+void line_rasterizer::next_fragment()
 {
 	// run the innerloop once
 	// Dereference a pointer to a private member function.
 	// It looks strange, but it is the way to do it!
 	(this->*innerloop)();
-}
+}
+
 int line_rasterizer::x() const
 {
 	if (!this->valid) {
@@ -116,7 +163,8 @@ int line_rasterizer::x() const
 			);
 	}
 	return this->x_current;
-}
+}
+
 int line_rasterizer::y() const
 {
 	if (!this->valid) {
@@ -140,7 +188,8 @@ void line_rasterizer::x_dominant_innerloop()
 		this->x_current += this->x_step;
 		this->d += this->abs_2dy;
 	}
-}
+}
+
 void line_rasterizer::y_dominant_innerloop()
 {
 	if (this->y_current == this->y_stop)
