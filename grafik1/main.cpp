@@ -33,6 +33,130 @@ using std::ifstream;
 * Find the GLFW keycodes here:
 * http://www.glfw.org/docs/latest/group__keys.html
 */
+
+class line_rasterizer {
+public:
+	line_rasterizer();
+	virtual ~line_rasterizer();
+	void init(int x1, int y1, int x2, int y2);
+	bool more_fragments() const;
+	void next_fragment();
+	int x() const;
+	int y() const;
+private:
+	int x_start;
+	int y_start;
+	int x_stop;
+	int y_stop;
+	int x_current;
+	int y_current;
+	bool left_right;
+	int dx;
+	int dy;
+	int abs_2dx;
+	int abs_2dy;
+	int d;
+	int x_step;
+	int y_step;
+	bool valid;
+	void (line_rasterizer::*innerloop)();
+};
+
+line_rasterizer::line_rasterizer() : valid(false)
+{}
+line_rasterizer::~line_rasterizer()
+{}
+
+void line_rasterizer::init(int x1, int y1, int x2, int y2)
+{
+	this->x_start = x1;
+	this->y_start = y1;
+	this->x_stop = x2;
+	this->y_stop = y2;
+	this->x_current = this->x_start;
+	this->y_current = this->y_start;
+
+	this->dx = this->x_stop - this->x_start;
+	this->dy = this->y_stop - this->y_start;
+	this->abs_2dx = std::abs(this->dx) << 1; // 2 * |dx|
+	this->abs_2dy = std::abs(this->dy) << 1; // 2 * |dy|
+	this->x_step = (this->dx < 0) ? -1 : 1;
+	this->y_step = (this->dy < 0) ? -1 : 1;
+	if (this->abs_2dx > this->abs_2dy) {
+		// The line is x-dominant
+		this->left_right = (this->x_step > 0);
+		this->d = this->abs_2dy - (this->abs_2dx >> 1);
+		this->valid = (this->x_start != this->x_stop);
+		this->innerloop =
+			&line_rasterizer::x_dominant_innerloop;
+	}
+	else {
+		// The line is y-dominant
+		this->left_right = (this->y_step > 0);
+		this->d = this->abs_2dx - (this->abs_2dy >> 1);
+		this->valid = (this->y_start != this->y_stop);
+		this->innerloop =
+			&line_rasterizer::y_dominant_innerloop;
+	}
+}bool line_rasterizer::more_fragments() const
+{
+	return this->valid;
+}void line_rasterizer::next_fragment()
+{
+	// run the innerloop once
+	// Dereference a pointer to a private member function.
+	// It looks strange, but it is the way to do it!
+	(this->*innerloop)();
+}
+int line_rasterizer::x() const
+{
+	if (!this->valid) {
+		throw std::runtime_error(
+			"line_rasterizer::x(): Invalid State"
+			);
+	}
+	return this->x_current;
+}
+int line_rasterizer::y() const
+{
+	if (!this->valid) {
+		throw std::runtime_error(
+			"line_rasterizer::y(): Invalid State"
+			);
+	}
+	return this->y_current;
+}
+
+void line_rasterizer::x_dominant_innerloop()
+{
+	if (this->x_current == this->x_stop)
+		this->valid = false;
+	else {
+		if ((this->d > 0) ||
+			((this->d == 0) && this->left_right)) {
+			this->y_current += this->y_step;
+			this->d -= this->abs_2dx;
+		}
+		this->x_current += this->x_step;
+		this->d += this->abs_2dy;
+	}
+}
+void line_rasterizer::y_dominant_innerloop()
+{
+	if (this->y_current == this->y_stop)
+		this->valid = false;
+	else {
+		if ((this->d > 0) ||
+			((this->d == 0) && this->left_right)) {
+			this->x_current += this->x_step;
+			this->d -= this->abs_2dy;
+		}
+		this->y_current += this->y_step;
+		this->d += this->abs_2dx;
+	}
+}
+
+
 static void controlScene(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
@@ -98,7 +222,7 @@ int main(int argc, char *argv[])
 
 	GLFWwindow* window = glfwCreateWindow(
 		width, height,
-		"Grafik 2015 framework",
+		"Aflevering 1 framework",
 		NULL, NULL);
 
 	if (window == NULL) {
