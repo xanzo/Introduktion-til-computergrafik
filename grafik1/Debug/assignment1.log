@@ -1,0 +1,21 @@
+﻿Build started 12-03-2015 12:00:08.
+     1>Project "F:\vs build\grafik1\assignment1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         F:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\build\glew-1.12.0\include" /I"F:\build\glfw-3.1.bin.WIN32\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt DotMaker.cpp main.cpp ShaderProgram.cpp
+         ShaderProgram.cpp
+         main.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
+                 f:\build\glfw-3.1.bin.win32\include\glfw\glfw3.h(96) : see previous definition of 'APIENTRY'
+         DotMaker.cpp
+         Generating Code...
+       Link:
+         F:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\vs build\grafik1\Debug\assignment1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\build\glew-1.12.0\lib\Release\Win32" /LIBPATH:"F:\build\glfw-3.1.bin.WIN32\lib-vc2013" opengl32.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\vs build\grafik1\Debug\assignment1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\vs build\grafik1\Debug\assignment1.lib" /MACHINE:X86 Debug\DotMaker.obj
+         Debug\main.obj
+         Debug\ShaderProgram.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         assignment1.vcxproj -> F:\vs build\grafik1\Debug\assignment1.exe
+     1>Done Building Project "F:\vs build\grafik1\assignment1.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.46

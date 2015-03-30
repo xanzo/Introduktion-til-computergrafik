@@ -1,0 +1,23 @@
+﻿Build started 18-03-2015 14:29:57.
+     1>Project "F:\vs build\Grafik2\Grafik2.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         F:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\vs build\Grafik2\Debug\Grafik2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\build\glew-1.12.0\lib\Release\Win32" /LIBPATH:"F:\build\glfw-3.1.bin.WIN32\lib-vc2013" opengl32.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\vs build\Grafik2\Debug\Grafik2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\vs build\Grafik2\Debug\Grafik2.lib" /MACHINE:X86 /FORCE:MULTIPLE Debug\DotMaker.obj
+         Debug\main.obj
+         Debug\ShaderProgram.obj
+         "Debug\assignment-2.obj"
+         Debug\edge.obj
+         Debug\glmutils.obj
+         Debug\triangle.obj
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+     1>DotMaker.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>assignment-2.obj : warning LNK4006: _main already defined in main.obj; second definition ignored
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>assignment-2.obj : error LNK2019: unresolved external symbol _gluErrorString@4 referenced in function "void __cdecl ErrorCheck(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?ErrorCheck@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+     1>assignment-2.obj : error LNK2019: unresolved external symbol "public: __thiscall InputFile::InputFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0InputFile@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl Read(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?Read@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV12@@Z)
+     1>assignment-2.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall InputFile::~InputFile(void)" (??1InputFile@@UAE@XZ) referenced in function "public: void __thiscall InputFile::`vbase destructor'(void)" (??_DInputFile@@QAEXXZ)
+     1>F:\vs build\Grafik2\Debug\Grafik2.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "F:\vs build\Grafik2\Grafik2.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.39
