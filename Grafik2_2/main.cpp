@@ -370,7 +370,7 @@ static void drawScene(GLuint shaderID)
 	DotMaker::instance()->setScene(800, 600, 15, true);
 	DotMaker::instance()->setColor(1.0f, 0.0f, 0.0f);
 
-	triangles(1, 1, 3, 5, 5, 1);
+	triangles(1,2,3,4,5,6);
 
 	glFlush();
 }
