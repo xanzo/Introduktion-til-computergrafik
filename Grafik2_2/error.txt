@@ -1,0 +1,2 @@
+Fatal: Error compiling shader type 35632: 0(6) : error C7533: global variable gl_FragColor is deprecated after version 120
+
