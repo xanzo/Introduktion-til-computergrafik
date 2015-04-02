@@ -44,7 +44,8 @@ void drawline(int x1, int y1, int x2, int y2)
 	int y_step = (dy < 0) ? -1 : 1; // sign og dy
 	bool x_dominant = (abs_2dx > abs_2dy);
 	int x = x1; // The running x is initialized to x1
-	int y = y1; // The running y is initialized to y1
+	int y = y1; // The running y is initialized to y1
+
 	if (x_dominant) {
 		bool left_right = (x_step > 0);
 		int d = abs_2dy - (abs_2dx >> 1); // 2 * |dy| - |dx|
@@ -101,6 +102,8 @@ private:
 	int y_step;
 	bool valid;
 	void (line_rasterizer::*innerloop)();
+	void x_dominant_innerloop();
+	void y_dominant_innerloop();
 };
 
 line_rasterizer::line_rasterizer() : valid(false)
@@ -229,10 +232,11 @@ static void drawScene(GLuint shaderID)
 	DotMaker::instance()->setColor(1.0f, 1.0f, 1.0f);
 	DotMaker::instance()->setScene(800, 600, 15, true);
 	DotMaker::instance()->setColor(1.0f, 0.0f, 0.0f);
-	DotMaker::instance()->drawDot(0, 0);
-	DotMaker::instance()->drawDot(1, 1);
-	DotMaker::instance()->drawDot(2, 2);
-	DotMaker::instance()->drawDot(3, 3);
+	//drawline(6, 1, 6, 11);
+	drawline(1, 6, 11, 6);
+	drawline(1, 1, 11, 11);
+	drawline(1, 11, 11, 1);
+
 
 	glFlush();
 }

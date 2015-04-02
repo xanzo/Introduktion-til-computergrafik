@@ -186,6 +186,42 @@ triangle_rasterizer::triangle_rasterizer(int x1, int y1,
 triangle_rasterizer::~triangle_rasterizer()
 {}
 
+void triangle_rasterizer::init(int x1, int y1, int x2, int y2, int x3, int y3)
+{
+glm::vec3 e1 = UL - LL;
+glm::vec3 e2 = OT - LL;
+glm::vec3 e0 = glm::cross(e1, e2);
+int d = e0.z;
+
+this->left = edge_rasterizer();
+this->right = edge_rasterizer();
+
+if (LL.y == OT.y){
+	// For low horisontal edge
+	left.init(LL.x, LL.y, UL.x, UL.y);
+	right.init(OT.x, OT.y, UL.x, UL.y);
+}
+else if (UL.y == OT.y){
+	// For high horisontal edge
+	left.init(LL.x, LL.y, UL.x, UL.y);
+	right.init(LL.x, LL.y, OT.x, OT.y);
+}
+else if (d > 0){
+	// For two left edges
+	left.init(LL.x, LL.y, OT.x, OT.y, UL.x, UL.y);
+	right.init(LL.x, LL.y, UL.x, UL.y);
+}
+else if (d < 0){
+	// For two right edges
+	left.init(LL.x, LL.y, UL.x, UL.y);
+	right.init(LL.x, LL.y, OT.x, OT.y, UL.x, UL.y);
+}
+
+// Continues algorithm
+next_fragment();
+
+}
+
 int triangle_rasterizer::LowerLeft()
 {
 	int ll = 0;
@@ -370,7 +406,7 @@ static void drawScene(GLuint shaderID)
 	DotMaker::instance()->setScene(800, 600, 15, true);
 	DotMaker::instance()->setColor(1.0f, 0.0f, 0.0f);
 
-	triangles(1, 1, 2, 2, 3, 1);
+	triangles(1, 1, 5, 5, 5, 1);
 
 	glFlush();
 }

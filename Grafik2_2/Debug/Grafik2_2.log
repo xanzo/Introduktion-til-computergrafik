@@ -1,4 +1,4 @@
-﻿Build started 02-04-2015 15:31:39.
+﻿Build started 02-04-2015 17:25:35.
      1>Project "C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\Grafik2_2\Grafik2_2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          F:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\build\glew-1.12.0\include" /I"F:\build\glfw-3.1.bin.WIN32\include" /IF:\build\glm /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -14,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.67
+Time Elapsed 00:00:00.73

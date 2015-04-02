@@ -1,66 +1,17 @@
-﻿Build started 30-03-2015 20:08:53.
+﻿Build started 02-04-2015 17:59:19.
      1>Project "C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\assignment1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          F:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\build\glew-1.12.0\include" /I"F:\build\glfw-3.1.bin.WIN32\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
      1>c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: 'APIENTRY' : macro redefinition
                  f:\build\glfw-3.1.bin.win32\include\glfw\glfw3.h(96) : see previous definition of 'APIENTRY'
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(133): error C2039: 'x_dominant_innerloop' : is not a member of 'line_rasterizer'
-                 c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(78) : see declaration of 'line_rasterizer'
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(133): error C2065: 'x_dominant_innerloop' : undeclared identifier
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(141): error C2039: 'y_dominant_innerloop' : is not a member of 'line_rasterizer'
-                 c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(78) : see declaration of 'line_rasterizer'
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(141): error C2065: 'y_dominant_innerloop' : undeclared identifier
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(178): error C2039: 'x_dominant_innerloop' : is not a member of 'line_rasterizer'
-                 c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(78) : see declaration of 'line_rasterizer'
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(180): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(180): error C2227: left of '->x_current' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(180): error C2227: left of '->x_stop' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(181): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(181): error C2227: left of '->valid' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(183): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(183): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(184): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(184): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(184): error C2227: left of '->left_right' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(185): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(185): error C2227: left of '->y_current' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(185): error C2227: left of '->y_step' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(186): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(186): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(186): error C2227: left of '->abs_2dx' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(188): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(188): error C2227: left of '->x_current' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(188): error C2227: left of '->x_step' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(189): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(189): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(189): error C2227: left of '->abs_2dy' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(193): error C2039: 'y_dominant_innerloop' : is not a member of 'line_rasterizer'
-                 c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(78) : see declaration of 'line_rasterizer'
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(195): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(195): error C2227: left of '->y_current' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(195): error C2227: left of '->y_stop' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(196): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(196): error C2227: left of '->valid' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(198): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(198): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(199): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(199): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(199): error C2227: left of '->left_right' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(200): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(200): error C2227: left of '->x_current' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(200): error C2227: left of '->x_step' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(201): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(201): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(201): error C2227: left of '->abs_2dy' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(203): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(203): error C2227: left of '->y_current' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(203): error C2227: left of '->y_step' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(204): error C2355: 'this' : can only be referenced inside non-static member functions or non-static data member initializers
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(204): error C2227: left of '->d' must point to class/struct/union/generic type
-     1>c:\users\computer1\documents\github\introduktion-til-computergrafik\grafik1\main.cpp(204): error C2227: left of '->abs_2dx' must point to class/struct/union/generic type
-     1>Done Building Project "C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\assignment1.vcxproj" (Build target(s)) -- FAILED.
+       Link:
+         F:\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\Debug\assignment1.exe" /INCREMENTAL /NOLOGO /LIBPATH:"F:\build\glew-1.12.0\lib\Release\Win32" /LIBPATH:"F:\build\glfw-3.1.bin.WIN32\lib-vc2013" opengl32.lib glew32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\Debug\assignment1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\Debug\assignment1.lib" /MACHINE:X86 Debug\DotMaker.obj
+         Debug\main.obj
+         Debug\ShaderProgram.obj
+         assignment1.vcxproj -> C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\Debug\assignment1.exe
+     1>Done Building Project "C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\grafik1\assignment1.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.75
+Time Elapsed 00:00:00.68
