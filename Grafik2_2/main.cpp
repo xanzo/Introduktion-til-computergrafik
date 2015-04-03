@@ -188,37 +188,41 @@ triangle_rasterizer::~triangle_rasterizer()
 
 void triangle_rasterizer::init(int x1, int y1, int x2, int y2, int x3, int y3)
 {
-glm::vec3 e1 = UL - LL;
-glm::vec3 e2 = OT - LL;
-glm::vec3 e0 = glm::cross(e1, e2);
-int d = e0.z;
+	glm::vec3 UL = glm::ivec3(x1, x2, 0);
+	glm::vec3 LL = glm::ivec3(x1, x3, 0);
+	glm::vec3 OT = glm::ivec3(x2, x3, 0);
 
-this->left = edge_rasterizer();
-this->right = edge_rasterizer();
+	glm::vec3 e1 = UL - LL;
+	glm::vec3 e2 = OT - LL;
+	glm::vec3 e0 = glm::cross(e1, e2);
+	int d = e0.z;
 
-if (LL.y == OT.y){
-	// For low horisontal edge
-	left.init(LL.x, LL.y, UL.x, UL.y);
-	right.init(OT.x, OT.y, UL.x, UL.y);
-}
-else if (UL.y == OT.y){
-	// For high horisontal edge
-	left.init(LL.x, LL.y, UL.x, UL.y);
-	right.init(LL.x, LL.y, OT.x, OT.y);
-}
-else if (d > 0){
-	// For two left edges
-	left.init(LL.x, LL.y, OT.x, OT.y, UL.x, UL.y);
-	right.init(LL.x, LL.y, UL.x, UL.y);
-}
-else if (d < 0){
-	// For two right edges
-	left.init(LL.x, LL.y, UL.x, UL.y);
-	right.init(LL.x, LL.y, OT.x, OT.y, UL.x, UL.y);
-}
+	edge_rasterizer left;
+	edge_rasterizer right;
 
-// Continues algorithm
-next_fragment();
+	if (LL.y == OT.y){
+		// For low horisontal edge
+		left.init(LL.x, LL.y, UL.x, UL.y);
+		right.init(OT.x, OT.y, UL.x, UL.y);
+	}
+	else if (UL.y == OT.y){
+		// For high horisontal edge
+		left.init(LL.x, LL.y, UL.x, UL.y);
+		right.init(LL.x, LL.y, OT.x, OT.y);
+	}
+	else if (d > 0){
+		// For two left edges
+		left.init(LL.x, LL.y, OT.x, OT.y, UL.x, UL.y);
+		right.init(LL.x, LL.y, UL.x, UL.y);
+	}
+	else if (d < 0){
+		// For two right edges
+		left.init(LL.x, LL.y, UL.x, UL.y);
+		right.init(LL.x, LL.y, OT.x, OT.y, UL.x, UL.y);
+	}
+
+	// Continues algorithm
+	next_fragment();
 
 }
 
