@@ -232,7 +232,7 @@ static void drawScene(GLuint shaderID)
 	DotMaker::instance()->setColor(1.0f, 1.0f, 1.0f);
 	DotMaker::instance()->setScene(800, 600, 15, true);
 	DotMaker::instance()->setColor(1.0f, 0.0f, 0.0f);
-	//drawline(6, 1, 6, 11);
+	drawline(6, 1, 6, 11);
 	drawline(1, 6, 11, 6);
 	drawline(1, 1, 11, 11);
 	drawline(1, 11, 11, 1);
