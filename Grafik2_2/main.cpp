@@ -359,6 +359,36 @@ int triangle_rasterizer::y() const
 	return this->y_current;
 }
 
+void triangles2(int x1, int y1, int x2, int y2, int x3, int y3) {
+	triangle_rasterizer trian(x1, y1, x2, y2, x3, y3);
+
+	trian.init(x1, y1, x2, y2, x3, y3);
+
+	glm::vec3 UL = glm::ivec3(x1, x2, 0);
+	glm::vec3 LL = glm::ivec3(x1, x3, 0);
+	glm::vec3 OT = glm::ivec3(x2, x3, 0);
+
+
+
+	int leftx = x_start;
+	int lefty = y();
+	int rightx = x();
+
+	if (leftx < rightx) {
+		for (int i = leftx; i < rightx; ++i){
+			DotMaker::instance()->drawDot(i, lefty);
+		}
+	}
+	else {
+		for (int i = rightx; i < leftx; ++i){
+			DotMaker::instance()->drawDot(i, lefty);
+		}
+		next_fragment();
+		next_fragment();
+	}
+}
+
+
 void triangles(int x1, int y1, int x2, int y2, int x3, int y3) {
 	edge_rasterizer left;
 	left.init(x1, y1, x2, y2);
