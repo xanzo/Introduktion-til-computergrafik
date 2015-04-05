@@ -30,6 +30,57 @@ using std::ifstream;
 #include "ShaderProgram.h"
 #include "DotMaker.h"
 
+#include "glm\glm.hpp"
+
+#include "camera.h"
+
+glm::vec3 House[] = {
+	//Front wall
+	glm::vec3(0.0f, 0.0f, 54.0f),
+	glm::vec3(16.0f, 0.0f, 54.0f),
+	glm::vec3(16.0f, 0.0f, 54.0f),
+	glm::vec3(16.0f, 10.0f, 54.0f),
+	glm::vec3(16.0f, 10.0f, 54.0f),
+	glm::vec3(8.0f, 16.0f, 54.0f),
+	glm::vec3(8.0f, 16.0f, 54.0f),
+	glm::vec3(0.0f, 10.0f, 54.0f),
+	glm::vec3(0.0f, 10.0f, 54.0f),
+	glm::vec3(0.0f, 0.0f, 54.0f),
+	//Back Wall
+	glm::vec3(0.0f, 0.0f, 30.0f),
+	glm::vec3(16.0f, 0.0f, 30.0f),
+	glm::vec3(16.0f, 0.0f, 30.0f),
+	glm::vec3(16.0f, 10.0f, 30.0f),
+	glm::vec3(16.0f, 10.0f, 30.0f),
+	glm::vec3(8.0f, 16.0f, 30.0f),
+	glm::vec3(8.0f, 16.0f, 30.0f),
+	glm::vec3(0.0f, 10.0f, 30.0f),
+	glm::vec3(0.0f, 10.0f, 30.0f),
+	glm::vec3(0.0f, 0.0f, 30.0f),
+	//Sides
+	glm::vec3(0.0f, 0.0f, 54.0f),
+	glm::vec3(0.0f, 0.0f, 30.0f),
+	glm::vec3(16.0f, 0.0f, 54.0f),
+	glm::vec3(16.0f, 0.0f, 30.0f),
+	glm::vec3(16.0f, 10.0f, 54.0f),
+	glm::vec3(16.0f, 10.0f, 30.0f),
+	glm::vec3(8.0f, 16.0f, 54.0f),
+	glm::vec3(8.0f, 16.0f, 30.0f),
+	glm::vec3(0.0f, 10.0f, 54.0f),
+	glm::vec3(0.0f, 10.0f, 30.0f)
+};
+
+void Eksempel1() {
+	glm::vec3 vrp(0.0f, 0.0f, 0.0f);
+	glm::vec3 vpn(0.0f, 0.0f, 1.0f);
+	glm::vec3 vup(0.0f, 1.0f, 0.0f);
+	glm::vec3 prp(8.0f, 6.0f, 84.0f);
+	glm::vec2 lower_left(-50.0f, -50.0f);
+	glm::vec2 upper_right(50.0f, 50.0f);
+	float front_plane = 60.0f;
+	float back_plane = 25.0f;
+}
+
 /**
  * Find the GLFW keycodes here:
  * http://www.glfw.org/docs/latest/group__keys.html
