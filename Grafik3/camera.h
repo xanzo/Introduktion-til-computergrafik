@@ -10,9 +10,9 @@
 
 
 //#define TRACE 1
-#include "RasterMan/trace.h"
+#include "trace.h"
 //#undef TRACE
-#include "RasterMan/glmutils.h"
+#include "glmutils.h"
 
 
 /**
