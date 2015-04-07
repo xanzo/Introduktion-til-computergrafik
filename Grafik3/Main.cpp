@@ -170,7 +170,8 @@ int main(int argc, char *argv[])
 	std::string fs = "";
 
 	if(fileRead("Shader.vert", &vs) < 0 ||
-	   fileRead("Shader.frag", &fs) < 0)
+	   fileRead("Shader.frag", &fs) < 0 ||
+	   fileRead("PersProj.vert", &vs) < 0)
 	{
 		glfwDestroyWindow(window);
 		glfwTerminate();

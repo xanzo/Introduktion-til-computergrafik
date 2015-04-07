@@ -8,10 +8,6 @@
 #include <string>
 #include <cctype>
 
-
-//#define TRACE 1
-#include "trace.h"
-//#undef TRACE
 #include "glmutils.h"
 
 
