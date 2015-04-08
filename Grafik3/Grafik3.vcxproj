@@ -78,6 +78,7 @@
     <ClCompile Include="ShaderProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PersProj.vert" />
     <None Include="Shader.frag" />
     <None Include="Shader.vert" />
   </ItemGroup>

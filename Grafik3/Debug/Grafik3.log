@@ -1,4 +1,4 @@
-﻿Build started 07-04-2015 13:48:45.
+﻿Build started 08-04-2015 15:05:18.
      1>Project "C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\Grafik3\Grafik3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          F:\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"F:\build\glew-1.12.0\include" /I"F:\build\glfw-3.1.bin.WIN32\include" /IF:\build\glm /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
@@ -10,10 +10,9 @@
          Debug\glmutils.obj
          Debug\Main.obj
          Debug\ShaderProgram.obj
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          Grafik3.vcxproj -> C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\Grafik3\Debug\Grafik3.exe
      1>Done Building Project "C:\Users\Computer1\Documents\GitHub\Introduktion-til-computergrafik\Grafik3\Grafik3.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.78
+Time Elapsed 00:00:00.77

@@ -35,6 +35,9 @@
     <None Include="Shader.vert">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="PersProj.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShaderProgram.h">

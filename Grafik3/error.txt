@@ -1,0 +1,2 @@
+Fatal: Error compiling shader type 35632: 0(5) : error C7528: OpenGL reserves names starting with 'gl_'
+

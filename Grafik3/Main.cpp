@@ -168,10 +168,11 @@ int main(int argc, char *argv[])
 
 	std::string vs = "";
 	std::string fs = "";
+	std::string ps = "";
 
 	if(fileRead("Shader.vert", &vs) < 0 ||
 	   fileRead("Shader.frag", &fs) < 0 ||
-	   fileRead("PersProj.vert", &vs) < 0)
+	   fileRead("PersProj.vert", &ps) < 0)
 	{
 		glfwDestroyWindow(window);
 		glfwTerminate();
